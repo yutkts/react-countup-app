@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.counter-card {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--pico-background-color);
+    border-radius: var(--pico-border-radius);
+}
+
+.counter-display h2 {
+    font-size: 4rem;
+    margin: 0;
+    color: var(--pico-primary);
+}
+
+.btton-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-widht: 768px) {
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-display h2 {
+        font-size: 3rem;
+    }
+}

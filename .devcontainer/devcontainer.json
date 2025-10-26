@@ -1,0 +1,31 @@
+{
+    "name": "React CountUp App",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ms-vscode.vscode-typescript-next",
+                "anthropic.claude-code"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "explicit"
+                },
+                "typescript.tsdk":"node_modules/typescript/lib"
+            }
+        }
+    },
+
+    "forwardPorts": [5173],
+    "postCreateCommand": "npm install",
+    "remoteUser": "node",
+    "mounts" : [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.anthropic,target=/home/node.anthropic,type=bind,consistency=cached"
+    ]
+}
